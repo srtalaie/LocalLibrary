@@ -26,7 +26,10 @@ app.use(limiter)
 //Connect to MongoDB
 const mongoose = require("mongoose")
 mongoose.set("strictQuery", false)
-const mongoDB = process.env.MONGO_URI
+const mongoDB =
+	process.env.NODE_ENV === "production"
+		? process.env.MONGO_PROD_URI
+		: process.env.MONGO_URI
 
 main().catch((err) => console.log(err))
 async function main() {
