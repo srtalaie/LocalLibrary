@@ -27,9 +27,9 @@ app.use(limiter)
 const mongoose = require("mongoose")
 mongoose.set("strictQuery", false)
 const mongoDB =
-	process.env.NODE_ENV === "production"
-		? process.env.MONGO_PROD_URI
-		: process.env.MONGO_URI
+	process.env.NODE_ENV == "development"
+		? process.env.MONGO_URI
+		: process.env.MONGO_PROD_URI
 
 main().catch((err) => console.log(err))
 async function main() {

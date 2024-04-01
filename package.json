@@ -6,9 +6,9 @@
   },
   "private": true,
   "scripts": {
-    "start": "SET NODE_ENV=production && node ./bin/www",
+    "start": "cross-env NODE_ENV=production node app.js",
     "devstart": "nodemon ./bin/www",
-    "serverstart": "SET DEBUG=LocalLibrary:* && SET NODE_ENV=development & npm run devstart"
+    "serverstart": "SET DEBUG=LocalLibrary:* & cross-env NODE_ENV=development npm run devstart"
   },
   "dependencies": {
     "compression": "^1.7.4",
@@ -27,6 +27,7 @@
     "pug": "2.0.0-beta11"
   },
   "devDependencies": {
+    "cross-env": "^7.0.3",
     "nodemon": "^3.1.0"
   }
 }
