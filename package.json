@@ -6,7 +6,7 @@
   },
   "private": true,
   "scripts": {
-    "start": "cross-env NODE_ENV=production node app.js",
+    "start": "cross-env NODE_ENV=production node ./bin/www",
     "devstart": "nodemon ./bin/www",
     "serverstart": "SET DEBUG=LocalLibrary:* & cross-env NODE_ENV=development npm run devstart"
   },
