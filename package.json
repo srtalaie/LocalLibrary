@@ -8,7 +8,7 @@
   "scripts": {
     "start": "SET NODE_ENV=production && node ./bin/www",
     "devstart": "nodemon ./bin/www",
-    "serverstart": "SET DEBUG=LocalLibrary:* & npm run devstart"
+    "serverstart": "SET DEBUG=LocalLibrary:* && SET NODE_ENV=development & npm run devstart"
   },
   "dependencies": {
     "compression": "^1.7.4",
